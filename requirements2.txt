@@ -1,0 +1,26 @@
+# langchainhub
+# langchain_chroma
+
+# tiktoken==0.5.2
+azure-identity==1.15.0
+azure-storage-blob==12.18.3
+# psycopg2-binary==2.9.9
+# unstructured
+# python-dotenv==1.0.0
+
+# langchain_openai
+# azure-search-documents
+# langchain
+# langchain_community
+
+# openai
+# pgvector
+# streamlit
+# langchain-experimental
+
+# unstructured[pdf]
+# langgraph==0.0.51
+gtts
+streamlit
+# pydub
+python-dotenv==1.0.0
