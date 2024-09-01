@@ -1,49 +1,32 @@
-# import streamlit as st
-# from app_streamlit.audio import app_audio
-#
-#
-#
-# def main_st_app():
-#     st.set_page_config(layout="wide")
-#     st.title("asd")
-#
-#     tab_names = ["test 1", "Test 2"]
-#     tabs = st.tabs(tab_names)
-#
-#     with tabs[0]:
-#         app_audio()
-#
-#     with tabs[1]:
-#         app_audio()
-#
-# if __name__ == "__main__":
-#     main_st_app()
-#
-#
-
 import streamlit as st
 from application.const import lst_pages, falun_icon, lst_title
-from app_streamlit import audio
+from app_streamlit import audio, home, guide
+
+# Cấu hình trang
+st.set_page_config(
+    page_title="Audio Support - Falun Dafa",  # Đổi tiêu đề trang
+    page_icon=falun_icon  # Đổi biểu tượng trang, có thể dùng emoji hoặc đường dẫn đến file hình ảnh
+)
 
 # Thêm ảnh biểu tượng phía trên chữ "Menu"
 st.sidebar.image(falun_icon, width=150)
 st.sidebar.title("Audio Hỗ Trợ Tu Luyện")
 
 # Tạo sidebar với radio để chọn trang
-
 page = st.sidebar.radio("", lst_pages)
 
 # Hàm hiển thị nội dung các trang
+
 def home_page():
-    st.title("Home Page")
-    st.write("Chào mừng bạn đến với trang chủ!")
+    st.title("Falun Dafa")
+    home.content()
 
 def guide_page():
-    st.title("Guide")
-    st.write("Đây là trang hướng dẫn sử dụng website này.")
+    st.title("Hướng dẫn sử dụng")
+    guide.content()
 
 def list_page():
-    st.title("Danh sách các năm")
+    # st.title("Danh sách các năm")
     # Hiển thị danh sách các năm trong sidebar
     title = st.sidebar.radio("Chọn audio:", lst_title)
     display_works_by_year(title)
